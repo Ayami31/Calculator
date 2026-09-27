@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 .calculator {
     display: flex;
@@ -28,23 +28,39 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    flex: 1;
     gap: 32px;
+    padding: 0px;
 }
+.calculator .left {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.calculator .reset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .calculator .numbers {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 60%;
+    gap:48px;
+    justify-content: space-between;
 
 }
-.calculator .operators {
+.calculator .right {
     display: flex;
     flex-direction: column;
+    gap: 48px;
     
 
 }
 
-.calculator .buttons .numbers 
+
 .erase, .clear,
 .one, .two, .three, 
 .four, .five, .six,
@@ -53,10 +69,11 @@
 .plus, .minus, 
 .times, .obelus,
 .equals {
+    box-sizing: border-box;
     padding: 25px;
     border-radius: 100%;
-    max-width: 40%;
     font-size: xx-large;
+    align-items: center;
 }
 
 
@@ -66,8 +83,12 @@
 }
 
 .plus, .minus, 
-.times, .obelus {
+.times, .obelus,
+.equals {
+    display: flex;
     background-color: tomato;
+    justify-content: center;
+    align-items: center;
 }
 
 .one, .two, .three, 
@@ -81,3 +102,10 @@
     background-color:royalblue;
 }
 
+.left {
+  flex: 0 0 65%;   
+}
+
+.right {
+  flex: 0 0 20%;   
+}
