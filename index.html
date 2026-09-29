@@ -7,34 +7,32 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class = "calculator">
-        <div class="monitor"></div>
-        <div class="buttons">
-        <div class="left">
-            <div class="reset">
-            <div class="erase">E</div>
-            <div class="clear">C</div>
-            </div>
+    <div class="calculator">
+        <input class="monitor" readonly> 
+        <div class="keys">
             <div class="numbers">
-            <div class="one">1</div>
-            <div class="two">2</div>
-            <div class="three">3</div>
-            <div class="four">4</div>
-            <div class="five">5</div>
-            <div class="six">6</div>
-            <div class="seven">7</div>
-            <div class="eight">8</div>
-            <div class="nine">9</div>
-            <div class="zero">0</div>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('0')">0</button>
             </div>
-        </div>
-        <div class="right">
-            <div class="plus">+</div>
-            <div class="minus">-</div>
-            <div class="times">*</div>
-            <div class="obelus">/</div>
-            <div class="equals">=</div>
+            <div class="operators">
+                <button onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <button onclick="appendToDisplay('*')">*</button>
+                <button onclick="appendToDisplay('/')">/</button>
+                <button onclick="calculate()">=</button>
+                
             </div>
+
+
+
         </div>
     </div>
     <script src = "javascript.js"></script>
