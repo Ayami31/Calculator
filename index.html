@@ -8,8 +8,13 @@
 </head>
 <body>
     <div class="calculator">
-        <input class="monitor" readonly> 
+        <div class="monitor" id="monitor"></div>
         <div class="keys">
+            <div class="left">
+            <div class="erase">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="backspace()">⌫</button>
+            </div>
             <div class="numbers">
                 <button onclick="appendToDisplay('7')">7</button>
                 <button onclick="appendToDisplay('8')">8</button>
@@ -21,6 +26,7 @@
                 <button onclick="appendToDisplay('2')">2</button>
                 <button onclick="appendToDisplay('3')">3</button>
                 <button onclick="appendToDisplay('0')">0</button>
+            </div>
             </div>
             <div class="operators">
                 <button onclick="appendToDisplay('+')">+</button>
@@ -35,6 +41,6 @@
 
         </div>
     </div>
-    <script src = "javascript.js"></script>
+    <script src="javascript.js"></script>
 </body>
 </html>

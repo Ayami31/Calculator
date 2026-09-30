@@ -1,43 +1,93 @@
-.calculator {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    padding: 45px;
-    flex-wrap: wrap;
-    width: fit-content;
+:root {
+    --bg: #000;
+    --key-number: #333333;
+    --key-erase: #a5a5a5;
+    --key-operator: #ff9f0a;
+    --text: #fff;
+    --gap: 12px;
 }
 
+.calculator {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    width: min-content;
+    gap: 24px;
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- DISPLAY ---------- */
+.monitor {
+    height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--text);
+    font-size: 4rem;
+    font-weight: 300;
+
+    display: flex;
+    flex-direction: column-reverse;  /* starts at the BOTTOM, grows UP */
+    overflow-y: auto;                /* scrolls instead of spilling out */
+    scrollbar-width: none;           /* hide scrollbar (Firefox) */
+}
+.monitor::-webkit-scrollbar { display: none; } /* hide scrollbar (Chrome/Safari) */
+
+.monitor > * {
+    text-align: right;               /* starts at the RIGHT, grows left */
+    overflow-wrap: anywhere;         /* wraps to the next line when full */
+    line-height: 1.1;
+}
+
+/* ---------- BUTTONS ---------- */
 button {
     width: 100px;
     height: 100px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: none;
-    background-color: dimgray;
-    color: azure;
-    font-size: xx-large;
+    background-color: var(--key-number);
+    color: var(--text);
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: filter 0.15s, transform 0.1s;
+}
+button:hover  { filter: brightness(1.15); }
+button:active { transform: scale(0.94); filter: brightness(1.4); }
+
+.erase {
+    display: flex;
+    justify-content: space-around;
+}
+.erase button {
+    background-color: var(--key-erase);
+    color: #000;
 }
 
 .operators button {
-    background-color:chocolate;
+    background-color: var(--key-operator);
 }
 
+/* ---------- LAYOUT ---------- */
 .keys {
     display: flex;
     flex-direction: row;
-    gap: 10px;;
+    gap: var(--gap);
 }
+
 .numbers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-content: center;
+    gap: var(--gap);
 }
+.numbers > *:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
 .operators {
     display: grid;
-    grid-template-columns: repeat(1);
-    gap: 10px;;
-
+    grid-template-columns: 1fr;
+    gap: var(--gap);
 }
- .monitor {
-    height: max-content;
- }
